@@ -21,13 +21,13 @@ jobs:
 
       - name: Cache uv dependencies
         uses: actions/cache@v4
-        id: cache-uv # Give the step an id to check its output
+        id: cache-uv
         with:
           path: ~/.cache/uv
           key: cache-7845754
 
       - name: Install dependencies
-        run: uv pip install -r requirements.txt
+        run: uv pip install -r $GITHUB_WORKSPACE/requirements.txt
 
       - name: prime-cache-7845754
         run: |
